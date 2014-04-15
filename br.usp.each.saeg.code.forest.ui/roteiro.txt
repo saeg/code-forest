@@ -1,0 +1,20 @@
+ 1) New/Plug-in Development/Plug-in Project
+ 2) - use default location
+    Browse: Diretorio raiz do plug-in
+    Project name: br.usp.each.saeg.code.forest.ui
+    Next
+ 3) - Generate an activator...
+    - This plug-in will make contributions to the UI
+    Finish
+ 4) adiciona lib/*.jar no build path
+ 5) Seleciona o projeto
+    Play \/
+    Run as -> Eclipse Application
+ 6) Localizar o diretorio $HOME$/runtime-EclipseApplication
+ 7) Descompactar o projeto target-projects/commons-math.zip nesse diretorio
+ 8) No ambiente Eclipse-Plug-in
+ 9) New/Java Project
+10) x use default location
+    Project name: commons-math
+    Finish
+11) Selecione o projeto com o botão direito > Code Forest
