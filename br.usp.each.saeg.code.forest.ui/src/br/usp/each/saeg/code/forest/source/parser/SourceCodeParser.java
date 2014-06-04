@@ -296,7 +296,7 @@ public class SourceCodeParser extends ASTVisitor {
             statementScanner.resetTo(start, start + length);
             int token;
             while ((token = statementScanner.getNextToken()) != ITerminalSymbols.TokenNameEOF) {
-                String str = new String(statementScanner.getCurrentTokenSource());
+                String str = new String(statementScanner.getCurrentTokenSource());//FIXME bug aqui
                 if (token == ITerminalSymbols.TokenNameCOMMENT_BLOCK || token == ITerminalSymbols.TokenNameCOMMENT_JAVADOC || token == ITerminalSymbols.TokenNameCOMMENT_LINE) {
                     for (int i = 0; i < StringUtils.countMatches(str, LINE_SEPARATOR); i++) {
                         result.append(LINE_SEPARATOR);
@@ -305,7 +305,8 @@ public class SourceCodeParser extends ASTVisitor {
                     result.append(statementScanner.getCurrentTokenSource());
                 }
             }
-        } catch (InvalidInputException ignored) {
+        } catch (Exception ignored) {
+            CodeForestUIPlugin.log("erro ao ler o arquivo [" + parsingResult.getURI() + "]", ignored);
 
         } finally {
             statementScanner.resetTo(cu.getStartPosition(), cu.getStartPosition() + cu.getLength());

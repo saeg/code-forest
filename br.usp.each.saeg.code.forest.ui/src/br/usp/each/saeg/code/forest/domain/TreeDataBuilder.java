@@ -103,8 +103,13 @@ public class TreeDataBuilder {
         Map<String, Object> result = new HashMap<String, Object>();
         result.put("score", score);
         result.put("loc", locs);
-        result.put(IMarker.CHAR_START, position.getOffset());
-        result.put(IMarker.CHAR_END, position.getOffset() + position.getLength());
+        if (position != null) {
+            result.put(IMarker.CHAR_START, position.getOffset());
+            result.put(IMarker.CHAR_END, position.getOffset() + position.getLength());
+        } else {
+            result.put(IMarker.CHAR_START, 0);
+            result.put(IMarker.CHAR_END, 0);
+        }
         return result;
     }
 

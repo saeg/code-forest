@@ -58,6 +58,10 @@ public class CodeForestUIPlugin extends AbstractUIPlugin {
         instance.getLog().log(errorStatus(message, t));
     }
 
+    public static void log(String message, Throwable t) {
+        instance.getLog().log(errorStatus(message, t));
+    }
+
     public static void info(String message) {
         //instance.getLog().log(new Status(IStatus.INFO, ID, message));
     }
