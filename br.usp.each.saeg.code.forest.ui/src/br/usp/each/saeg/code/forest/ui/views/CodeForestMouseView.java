@@ -138,9 +138,6 @@ public class CodeForestMouseView extends ViewPart {
     @Override
     public void setFocus() {
         CodeForestUIPlugin.ui(project, this, "mouse plugin focus");
-        if (cv != null) {
-            cv.requestFocus();
-        }
     }
 
     public static String getSecondaryViewId(IProject project) {

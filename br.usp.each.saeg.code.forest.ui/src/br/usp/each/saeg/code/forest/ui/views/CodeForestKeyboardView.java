@@ -162,9 +162,6 @@ public class CodeForestKeyboardView extends ViewPart {
 
     @Override
     public void setFocus() {
-        if (cv != null) {
-            cv.requestFocus();
-        }
         if (filterPanel != null) {
             filterPanel.applyFilter(state.getScriptFilter());
         }
